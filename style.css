@@ -62,9 +62,6 @@ h1 {
     font-family: "Halloween";
     src: url(Scary\ Halloween\ Font.ttf);
 }
-#warning {
-    visibility: hidden;
-}
 @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
     html {
       transform: rotate(-90deg);
@@ -75,8 +72,5 @@ h1 {
       position: absolute;
       top: 100%;
       left: 0;
-    }
-    #warning {
-        visibility: visible;
     }
   }
