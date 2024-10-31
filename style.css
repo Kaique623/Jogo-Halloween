@@ -1,0 +1,67 @@
+#GameMainContainer {
+    background: url("https://www.pixelstalk.net/wp-content/uploads/image10/Halloween-HD-Desktop-Wallpaper-pumpkins-witches-full-moon-house.jpg"); 
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    display: grid;
+    grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+    min-width: 300px;
+    max-width: 1200px;
+    aspect-ratio : 16 / 9;
+
+    border: solid black 2px;
+
+    font-family: "Halloween";
+}
+h1 {
+    color: orange;
+    grid-column: 5;
+    grid-row: 2;
+    text-shadow: 1px 1px red;
+    text-wrap: nowrap;
+}
+#gametimer {
+    grid-row: 2;
+    color: white;
+    visibility: hidden;
+}
+#scoreCounter {
+    grid-row: 3;
+    color: white;
+    visibility: hidden;
+}
+#startButton {
+    grid-column: 5;
+    grid-row: 8;
+    background-color: orange;
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 50%;
+    margin-left: 25%;
+    justify-content: center;
+}
+#startButton:hover {
+    background-color: darkorange;
+}
+#startButton:active {
+    background-color: orangered;
+}
+
+.item {
+    color: orange;
+    background-size:  contain;
+    background-repeat: no-repeat;
+    margin-top: 5px;
+    margin-left: 25%;
+    border: none;
+}
+.item:hover {
+    background-color: white;
+    color: white;
+    outline-color: white;
+    box-shadow: white;
+}
+@font-face {
+    font-family: "Halloween";
+    src: url(Scary\ Halloween\ Font.ttf);
+}
