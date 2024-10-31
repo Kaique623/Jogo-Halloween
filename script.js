@@ -44,11 +44,35 @@ class Candy {
     }
 }
 
+class trash {
+    constructor (){
+        this.element = document.createElement("button")
+        this.element.style.background = "url(https://images.vexels.com/media/users/3/264716/isolated/preview/f0e57cdefa35ee793892771da58b4458-lixo-de-garrafa-de-pla-stico.png)";
+        this.element.style.backgroundSize = "contain";
+        this.element.style.backgroundRepeat = "no-repeat";
+        this.element.style.gridRow = randomIntFromInterval(4, 9);
+        this.element.style.gridColumn = randomIntFromInterval(2, 9);
+        this.element.className = "item";
+        this.element.id = "Trash" + candyCounter;;
+
+        this.element.setAttribute("onclick", `trashClick("${this.element.id}")`);
+
+        startRemoveCounter(this.element)
+        gameFrame.appendChild(this.element);
+        candyCounter++;
+    }
+}
+
 function candyClick(id){
     score += 1;
     scoreLabel.innerHTML = "Score: " + score
-    console.log(id)
     document.getElementById(id).remove();
+}
+
+function trashClick() {
+    if (score != 0)
+        score -= 1;
+    scoreLabel.innerHTML = "Score: " + score
 }
 
 function startRemoveCounter(element){
@@ -81,8 +105,15 @@ function startTimer(){
 
     setTimeout(() => {
         for (let i = 0; i < candyAmount; i++)
-            if (!gameEnd)
-                    new Candy();
+            if (!gameEnd){
+                new Candy();
+            }
+
+        for (let i = 0; i < randomIntFromInterval(1, 3); i++)
+            if (!gameEnd){
+                new trash();
+            }
+                
     }, randomIntFromInterval(1, 1000));
 
 

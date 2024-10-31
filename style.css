@@ -8,7 +8,6 @@
     min-width: 300px;
     max-width: 1200px;
     aspect-ratio : 16 / 9;
-
     border: solid black 2px;
 
     font-family: "Halloween";
@@ -56,12 +55,22 @@ h1 {
     border: none;
 }
 .item:hover {
-    background-color: white;
-    color: white;
-    outline-color: white;
-    box-shadow: white;
+    border: solid white 1px;
 }
 @font-face {
     font-family: "Halloween";
     src: url(Scary\ Halloween\ Font.ttf);
 }
+
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+    html {
+      transform: rotate(-90deg);
+      transform-origin: left top;
+      width: 100vh;
+      height: 100vw;
+      overflow-x: hidden;
+      position: absolute;
+      top: 100%;
+      left: 0;
+    }
+  }
