@@ -13,6 +13,14 @@
 
     font-family: "Halloween";
 }
+#FullScreenButton {
+    grid-column: 1 / span 10;
+    place-self: center;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 h1 {
     color: orange;
     grid-column: 5;
