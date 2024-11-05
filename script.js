@@ -144,6 +144,7 @@ function endGame(){
     endTimeLabel.visibility = "hidden";
 }
 
+
 function goFullScreen() {
     let element = document.getElementById("GameMainContainer");
     if (element.requestFullscreen) {
@@ -156,3 +157,22 @@ function goFullScreen() {
         element.msRequestFullscreen();
     }
 }
+
+// Ensure the container maintains a 16:9 aspect ratio
+window.addEventListener('resize', adjustAspectRatio);
+
+function adjustAspectRatio() {
+    let container = document.getElementById('GameMainContainer');
+    let windowAspectRatio = window.innerWidth / window.innerHeight;
+    let containerAspectRatio = 16 / 9;
+    
+    if (windowAspectRatio > containerAspectRatio) {
+        container.style.width = 'auto';
+        container.style.height = '100%';
+    } else {
+        container.style.width = '100%';
+        container.style.height = 'auto';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', adjustAspectRatio);
